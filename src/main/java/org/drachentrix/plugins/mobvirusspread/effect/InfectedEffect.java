@@ -59,7 +59,7 @@ public class InfectedEffect extends MobEffect {
                 entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, Integer.MAX_VALUE, 3));
                 entity.addEffect(new MobEffectInstance(MobEffects.POISON, Integer.MAX_VALUE, 2));
                 break;
-            case 4:
+            case 3:
                 reductionMultiplier = 0.03f;
                 entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, Integer.MAX_VALUE, 4));
                 entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, Integer.MAX_VALUE, 4));
