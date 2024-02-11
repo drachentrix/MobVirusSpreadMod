@@ -1,6 +1,6 @@
 {
-  "item.mobvirusspread.cure": "Virus Cure",
-  "item.mobvirusspread.virus": "Virus Infection",
-  "creativetab": "Virus Mod Tab",
+  "item.mobvirusspread.cure": "Cure",
+  "item.mobvirusspread.virus": "Infection",
+  "creativetab": "Virus Tab",
   "effect.mobvirusspread.infected": "Infection"
 }

@@ -1,0 +1,11 @@
+Mobs koennen mit dem Virus spawnen und verteilen
+Rezepte zum craften/brauen von den Items
+
+
+Effect png machen
+Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann
+
+Fuer immunsystem maybe ne anzeige machen
+
+Maybe durch zu viel usen kann eine resistenz gebildet werden und du brauchst andere verstaerker
+Verschiedene Krankheiten

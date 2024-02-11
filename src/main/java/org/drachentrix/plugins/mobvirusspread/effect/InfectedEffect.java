@@ -38,10 +38,6 @@ public class InfectedEffect extends MobEffect {
         float reductionMultiplier = 0.00f;
         entityG = entity;
         amplifier = pAmplifier;
-        Player player = (Player) entity;
-        PlayerChatMessage chatMessage = PlayerChatMessage.unsigned(player.getUUID(), "Amplifiy: " + pAmplifier);
-        player.createCommandSourceStack().sendChatMessage(new OutgoingChatMessage.Player(chatMessage), false,
-             ChatType.bind(ChatType.CHAT, player));
 
         switch (pAmplifier) {
             case 0:

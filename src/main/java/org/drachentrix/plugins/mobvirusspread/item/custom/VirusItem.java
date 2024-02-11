@@ -5,7 +5,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,35 +21,34 @@ import java.util.List;
  *
  * @author Drachentrix (Florian)
  */
-public class CureItem extends Item {
+public class VirusItem extends Item {
 
-    public CureItem(Properties properties) {
+    public VirusItem(Properties properties) {
         super(properties);
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        if (!level.isClientSide()) {
-            if (player.getEffect(VirusEffects.INFECTED.get()) != null) {
-                player.sendSystemMessage(Component.literal("You have healed yourself succesfully now dont die!! :)"));
-                player.removeEffect(VirusEffects.INFECTED.get());
-                player.removeEffect(MobEffects.CONFUSION);
-                player.removeEffect(MobEffects.WITHER);
-                player.removeEffect(MobEffects.DIG_SLOWDOWN);
-                player.removeEffect(MobEffects.BLINDNESS);
-                player.removeEffect(MobEffects.POISON);
-            } else {
-                player.sendSystemMessage(Component.literal("You are not ill!"));
+        if (!level.isClientSide){
+            if (player.hasEffect(VirusEffects.INFECTED.get())){
+                if (player.getEffect(VirusEffects.INFECTED.get()).getAmplifier() < 3){
+                    player.addEffect(new MobEffectInstance(VirusEffects.INFECTED.get(), 1000,
+                            player.getEffect(VirusEffects.INFECTED.get()).getAmplifier() + 1 ));
+                } else{
+                    player.sendSystemMessage(Component.literal("Dieser Effect ist schon auf dem Maximum"));
+                }
+            }else {
+                player.addEffect(new MobEffectInstance(VirusEffects.INFECTED.get(), 1000, 0));
             }
         }
         return super.use(level, player, interactionHand);
     }
+
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
         if (Screen.hasShiftDown()){
-            components.add(Component.literal("This syringe seems to cure the Infection, but be careful. Use it to often" +
-                            "and maybe there will be some resistance from the virus \n Right Click to inject")
-                    .withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.BLUE));
+            components.add(Component.literal("A weird looking Virus that seems to infect people, when they Right Click it")
+                    .withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.DARK_RED));
         }else{
             components.add(Component.literal("Press SHIFT for more info").withStyle(ChatFormatting.BOLD));
         }
