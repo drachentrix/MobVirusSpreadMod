@@ -8,6 +8,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.drachentrix.plugins.mobvirusspread.MobVirusSpread;
+import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
+import org.drachentrix.plugins.mobvirusspread.item.custom.VirusItem;
 
 /**
  * Create:
@@ -24,6 +26,9 @@ public class VirusCreativeTab {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(VirusCure.CURE.get());
                         output.accept(VirusCure.VIRUS.get());
+                        output.accept(VirusBlocks.VOIDDIRT_BLOCK.get());
+                        output.accept(VirusCure.VOIDBERRY.get());
+                        output.accept(VirusCure.VOIDBERRY_SEEDS.get());
                     } )
                     .build());
     public static void register(IEventBus eventBus){

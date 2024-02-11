@@ -1,6 +1,7 @@
 Mobs koennen mit dem Virus spawnen und verteilen
 Rezepte zum craften/brauen von den Items
-
+Png fuer die voidberry states
+png fuer Void Dirt
 
 Effect png machen
 Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann

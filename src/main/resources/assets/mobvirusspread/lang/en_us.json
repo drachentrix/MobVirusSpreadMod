@@ -1,6 +1,11 @@
 {
   "item.mobvirusspread.cure": "Cure",
   "item.mobvirusspread.virus": "Infection",
+  "item.mobvirusspread.voidberry": "Void Berry",
+  "item.mobvirusspread.voidberry_seeds": "Void Berry Seeds",
+
+  "block.mobvirusspread.voidberry_crop": "Void Berry Crop",
+  "block.mobvirusspread.voiddirt_block": "Void Dirt",
   "creativetab": "Virus Tab",
   "effect.mobvirusspread.infected": "Infection"
 }

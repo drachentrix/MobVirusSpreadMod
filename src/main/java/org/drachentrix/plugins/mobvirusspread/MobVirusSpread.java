@@ -1,6 +1,8 @@
 package org.drachentrix.plugins.mobvirusspread;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,6 +16,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
 import org.drachentrix.plugins.mobvirusspread.effect.EffectDurationChecker;
 import org.drachentrix.plugins.mobvirusspread.effect.VirusEffects;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCreativeTab;
@@ -33,6 +36,7 @@ public class MobVirusSpread {
         VirusCreativeTab.register(modEventBus);
         VirusCure.register(modEventBus);
         VirusEffects.register(modEventBus);
+        VirusBlocks.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new EffectDurationChecker());
 
 
@@ -63,6 +67,7 @@ public class MobVirusSpread {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            ItemBlockRenderTypes.setRenderLayer(VirusBlocks.VOIDBERRY_CROP.get(), RenderType.cutout());
         }
     }
 }
