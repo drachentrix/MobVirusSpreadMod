@@ -1,3 +1,4 @@
+gehe bis jetzt aus, dass es nur einen gibt spaeter wenn mehere halt alles umfixen
 Mobs koennen mit dem Virus spawnen und verteilen
 Rezepte zum craften/brauen von den Items
 Png fuer die voidberry states
@@ -5,6 +6,8 @@ png fuer Void Dirt
 
 Effect png machen
 Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann
+Spritze hilft nicht immer um gesundheit zu verbessern, kommt auf virus an
+bilder aendern
 
 Fuer immunsystem maybe ne anzeige machen
 
