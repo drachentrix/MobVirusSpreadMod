@@ -1,20 +1,14 @@
 package org.drachentrix.plugins.mobvirusspread.mob;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import org.drachentrix.plugins.mobvirusspread.effect.InfectedEffect;
 import net.minecraft.world.phys.Vec3;
-
-import java.awt.*;
 import java.util.Random;
 
 
