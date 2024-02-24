@@ -1,17 +1,16 @@
-gehe bis jetzt aus, dass es nur einen gibt spaeter wenn mehere halt alles umfixen
-Mobs koennen mit dem Virus spawnen und verteilen
-Rezepte zum craften/brauen von den Items
-Png fuer die voidberry states
+
+Maschienen fuer die Herstelllung von spritzen:
+    Kuehlschrank -> Zum aufbewahren/veraendern
+    "Crafting Station" -> Zum herstellen
+
+Png fuer die voidberry states (fast fertig)
 png fuer Void Dirt
 
-Effect png machen
-Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann
+Anzeige fuer Immunsystem
+Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann (so circa fertig, warten auf leiste dafuer)
+
 Spritze hilft nicht immer um gesundheit zu verbessern, kommt auf virus an
-bilder aendern
-
-Fuer immunsystem maybe ne anzeige machen
 Maybe durch zu viel usen kann eine resistenz gebildet werden und du brauchst andere verstaerker
-
 
 Verschiedene Krankheiten/Spritzen
 
