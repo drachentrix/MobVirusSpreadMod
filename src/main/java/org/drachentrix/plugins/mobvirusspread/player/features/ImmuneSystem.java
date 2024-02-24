@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class ImmuneSystem {
     public float immuneSystem = 100;
-    public int resistanz = 1; // prozent wie sehr die Person resistent ist z.B. mit armor wird weniger verbraucht
+    public int resistance = 1; // prozent wie sehr die Person resistent ist z.B. mit armor wird weniger verbraucht
     public FoodValues foodValues;
 
     public float getImmuneSystem() {
@@ -36,7 +36,7 @@ public class ImmuneSystem {
         Player player = (Player) entity;
         immuneSystem += foodValues.storedFoods.get(itemStack);
         foodValues.storedFoods.replace( itemStack, (foodValues.storedFoods.get(itemStack) - player.getFoodData().getFoodLevel() -
-                new Random().nextInt(1, 10) + new Random().nextInt(1, 5) ) * (resistanz / 100));
+                new Random().nextInt(1, 10) + new Random().nextInt(1, 5) ) * (resistance / 100));
 
         if (immuneSystem > 100) {
             immuneSystem = 100;
