@@ -60,6 +60,8 @@ public class MobVirusSpread {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(VirusCure.CURE);
             event.accept(VirusCure.VIRUS);
+            event.accept(VirusBlocks.VOIDBERRY_CROP);
+            event.accept(VirusBlocks.VOIDDIRT_BLOCK);
         }
     }
 
