@@ -9,11 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.drachentrix.plugins.mobvirusspread.MobVirusSpread;
 
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+
 public class VirusEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
             DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MobVirusSpread.MOD_ID);

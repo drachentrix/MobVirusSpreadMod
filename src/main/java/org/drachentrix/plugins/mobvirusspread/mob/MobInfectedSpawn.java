@@ -9,11 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Random;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+
 public class MobInfectedSpawn extends Mob {
 
     @SubscribeEvent

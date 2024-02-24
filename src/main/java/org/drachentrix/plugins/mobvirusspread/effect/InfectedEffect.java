@@ -13,11 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class InfectedEffect extends MobEffect {
 
     private static LivingEntity entityG;

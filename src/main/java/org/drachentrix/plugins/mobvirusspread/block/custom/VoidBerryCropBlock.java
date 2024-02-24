@@ -16,11 +16,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+
 public class VoidBerryCropBlock extends CropBlock {
 
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 5);

@@ -7,11 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.IPlantable;
 import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+
 public class VoidDirt extends Block {
 
     public VoidDirt(Properties properties) {

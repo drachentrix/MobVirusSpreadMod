@@ -1,8 +1,6 @@
 package org.drachentrix.plugins.mobvirusspread.block;
 
-import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -19,11 +17,7 @@ import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
 
 import java.util.function.Supplier;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+
 public class VirusBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MobVirusSpread.MOD_ID);

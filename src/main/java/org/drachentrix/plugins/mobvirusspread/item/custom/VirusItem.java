@@ -16,11 +16,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class VirusItem extends Item {
 
     public VirusItem(Properties properties) {

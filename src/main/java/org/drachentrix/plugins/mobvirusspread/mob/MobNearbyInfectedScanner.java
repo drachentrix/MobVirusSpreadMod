@@ -12,11 +12,6 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Random;
 
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class MobNearbyInfectedScanner {
 
     private int tickCounter = 0;

@@ -1,10 +1,8 @@
 package org.drachentrix.plugins.mobvirusspread.player;
 
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystem;
