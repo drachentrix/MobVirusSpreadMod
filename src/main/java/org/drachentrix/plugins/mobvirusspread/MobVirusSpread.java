@@ -21,6 +21,7 @@ import org.drachentrix.plugins.mobvirusspread.effect.VirusEffects;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCreativeTab;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
 import org.drachentrix.plugins.mobvirusspread.mob.MobInfectedSpawn;
+import org.drachentrix.plugins.mobvirusspread.mob.MobNearbyInfectedScanner;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -44,7 +45,9 @@ public class MobVirusSpread {
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(MobNearbyInfectedScanner.class);
         MinecraftForge.EVENT_BUS.register(MobInfectedSpawn.class);
+
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

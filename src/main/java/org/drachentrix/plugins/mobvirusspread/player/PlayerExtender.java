@@ -13,7 +13,7 @@ import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystem;
  *
  * @author Drachentrix (Florian)
  */
-public class PlayerExtender {
+public class PlayerExtender{
     public static ImmuneSystem immuneSystem;
 
     @SubscribeEvent
