@@ -31,11 +31,9 @@ public class VoidBerryCropBlock extends CarrotBlock {
 
     @Override
     public boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        Minecraft.getInstance().player.sendSystemMessage(Component.literal(blockState.getBlock().toString()));
-        if (!(blockState.getBlock() instanceof VoidDirt) ){
+        if (!(levelReader.getBlockState(new BlockPos(blockPos.getX(), blockPos.getY() - 1, blockPos.getZ())).getBlock() instanceof VoidDirt) ){
             return false;
         }
-        Minecraft.getInstance().player.sendSystemMessage(Component.literal("HI Ich bin da"));
         return super.canSurvive(blockState, levelReader, blockPos);
     }
 
