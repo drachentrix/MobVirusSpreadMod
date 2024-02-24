@@ -31,10 +31,7 @@ public class VoidBerryCropBlock extends CarrotBlock {
 
     @Override
     public boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        if (!(levelReader.getBlockState(new BlockPos(blockPos.getX(), blockPos.getY() - 1, blockPos.getZ())).getBlock() instanceof VoidDirt) ){
-            return false;
-        }
-        return super.canSurvive(blockState, levelReader, blockPos);
+        return levelReader.getBlockState(new BlockPos(blockPos.getX(), blockPos.getY() - 1, blockPos.getZ())).getBlock() instanceof VoidDirt;
     }
 
     @Override
