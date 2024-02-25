@@ -22,6 +22,7 @@ import org.drachentrix.plugins.mobvirusspread.item.VirusCreativeTab;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
 import org.drachentrix.plugins.mobvirusspread.mob.MobInfectedSpawn;
 import org.drachentrix.plugins.mobvirusspread.mob.MobNearbyInfectedScanner;
+import org.drachentrix.plugins.mobvirusspread.ui.ImmuneSystem;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -39,6 +40,7 @@ public class MobVirusSpread {
         VirusEffects.register(modEventBus);
         VirusBlocks.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new EffectDurationChecker());
+        MinecraftForge.EVENT_BUS.register(new ImmuneSystem());
 
 
         // Register the commonSetup method for modloading
