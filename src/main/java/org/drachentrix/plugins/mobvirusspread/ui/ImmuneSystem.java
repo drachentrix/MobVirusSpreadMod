@@ -27,6 +27,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.GameData;
 
 import java.lang.reflect.Field;
+import java.util.Random;
 
 public class ImmuneSystem {
 
@@ -40,17 +41,27 @@ public class ImmuneSystem {
 
     @SubscribeEvent
     public void onGuiRender(RenderGuiOverlayEvent.Post event) {
-        if (Minecraft.getInstance().player != null && Minecraft.getInstance().screen instanceof InventoryScreen) {
+        if (Minecraft.getInstance().player != null) {
             int scaling = Minecraft.getInstance().options.guiScale().get();
             if (scaling == 0) {
                 scaling = 4; // TODO asuming having 1080px gui scale and option "auto" selected.
             }
 
-            renderOverlay(event.getGuiGraphics(), (400) / scaling, 200 / scaling, CUSTOM_PNG);
+            int screenWidth = mc.getWindow().getGuiScaledWidth() * scaling;
+            int screenHeight = mc.getWindow().getGuiScaledHeight() * scaling;
+
+            int heartsBarX = screenWidth / 2 - 9 * scaling;
+            int heartsBarY = screenHeight - 56 * scaling;
+
+            renderOverlay(event.getGuiGraphics(), heartsBarX, heartsBarY, 18, 20, 304, 20, (int) (((System.currentTimeMillis() / 1000 % 20) + 1) * 16), 0, scaling, CUSTOM_PNG);
         }
     }
 
-    public static void renderOverlay(GuiGraphics guiGraphics, int x, int y, ResourceLocation resourceLocation) {
+    public static void renderOverlay(GuiGraphics guiGraphics, int x, int y, int displayWidth, int displayHeight, int imageWidth, int imageHeight, int offsetX, int offsetY, int scale, ResourceLocation resourceLocation) {
+        x /= scale;
+        y /= scale;
+
+
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, resourceLocation);
@@ -58,7 +69,7 @@ public class ImmuneSystem {
         RenderSystem.enableDepthTest();
         RenderSystem.depthFunc(519);
 
-        guiGraphics.blit(resourceLocation, x, y, 8, 8, 8, 8); // TODO die werte hier nochmal nachgooglen was das bedeutet
+        guiGraphics.blit(resourceLocation, x, y, offsetX, offsetY, displayWidth, displayHeight, imageWidth, imageHeight);
 
         RenderSystem.depthFunc(515);
         RenderSystem.disableDepthTest();
