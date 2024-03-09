@@ -1,9 +1,9 @@
 {
+  "parent": "minecraft:block/cube_all",
   "textures": {
     "bottom": "mobvirusspread:block/voiddirt_block",
     "top": "mobvirusspread:block/voiddirt_blocktop",
-    "side": "mobvirusspread:block/voiddirt_blockside",
-    "overlay": "mobvirusspread:block/voiddirt_blockoverlay"
+    "side": "mobvirusspread:block/voiddirt_blockside"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],
@@ -15,15 +15,6 @@
         "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "south" },
         "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "west" },
         "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "east" }
-      }
-    },
-    {   "from": [ 0, 0, 0 ],
-      "to": [ 16, 16, 16 ],
-      "faces": {
-        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0, "cullface": "north" },
-        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0, "cullface": "south" },
-        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0, "cullface": "west" },
-        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0, "cullface": "east" }
       }
     }
   ]
