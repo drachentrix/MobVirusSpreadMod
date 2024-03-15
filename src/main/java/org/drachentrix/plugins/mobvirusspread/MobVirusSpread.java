@@ -1,8 +1,10 @@
 package org.drachentrix.plugins.mobvirusspread;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +17,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.network.ChannelBuilder;
 import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
 import org.drachentrix.plugins.mobvirusspread.effect.EffectDurationChecker;
 import org.drachentrix.plugins.mobvirusspread.effect.VirusEffects;
@@ -24,6 +27,10 @@ import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
 import org.drachentrix.plugins.mobvirusspread.item.custom.VoidScytheItem;
 import org.drachentrix.plugins.mobvirusspread.mob.MobInfectedSpawn;
 import org.drachentrix.plugins.mobvirusspread.mob.MobNearbyInfectedScanner;
+import org.drachentrix.plugins.mobvirusspread.player.PlayerExtender;
+import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystem;
+import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystemHandler;
+import org.drachentrix.plugins.mobvirusspread.ui.ImmuneSystemUI;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -41,7 +48,19 @@ public class MobVirusSpread {
         VirusEffects.register(modEventBus);
         VirusBlocks.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new EffectDurationChecker());
+        MinecraftForge.EVENT_BUS.register(new ImmuneSystemUI());
+        MinecraftForge.EVENT_BUS.register(new PlayerExtender());
 
+        ImmuneSystemHandler.INSTANCE = ChannelBuilder
+                .named(new ResourceLocation(MobVirusSpread.MOD_ID, "immune_system_handler"))
+                .networkProtocolVersion(ImmuneSystemHandler.PROTOCOL_VERSION)
+                .clientAcceptedVersions((status, version) -> true)
+                .serverAcceptedVersions((status, version) -> true)
+                .simpleChannel().messageBuilder(ImmuneSystemHandler.class)
+                .encoder(ImmuneSystemHandler::encode)
+                .decoder(ImmuneSystemHandler::new)
+                .consumerNetworkThread(ImmuneSystemHandler::handle)
+                .add();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

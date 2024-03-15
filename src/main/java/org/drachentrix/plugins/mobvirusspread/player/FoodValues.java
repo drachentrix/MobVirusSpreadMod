@@ -6,11 +6,12 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 public class FoodValues {
-    public Map<ItemStack, Integer> storedFoods = new LinkedHashMap<>();
+    public Map<ItemStack, Integer> storedFoods = new HashMap<>();
 
     public void restoreOtherFood(ItemStack foods){
         //formel zum restoren machen
