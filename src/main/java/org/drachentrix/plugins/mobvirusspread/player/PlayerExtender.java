@@ -11,11 +11,7 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystem;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
+import java.util.Objects;
 
 public class PlayerExtender{
 

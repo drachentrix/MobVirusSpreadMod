@@ -31,7 +31,7 @@ public class VirusBlocks {
 
 
     public static final RegistryObject<Block> VOIDDIRT_BLOCK = registryObject("voiddirt_block",
-            () ->  new VoidDirt(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
+            () ->  new VoidDirt(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT).requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> registryObject(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

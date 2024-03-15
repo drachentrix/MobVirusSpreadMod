@@ -29,6 +29,7 @@ public class VirusCreativeTab {
                         output.accept(VirusBlocks.VOIDDIRT_BLOCK.get());
                         output.accept(VirusCure.VOIDBERRY.get());
                         output.accept(VirusCure.VOIDBERRY_SEEDS.get());
+                        output.accept(VirusCure.SCYTHE.get());
                     } )
                     .build());
     public static void register(IEventBus eventBus){

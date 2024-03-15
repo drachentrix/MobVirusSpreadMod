@@ -5,15 +5,11 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.LinkedHashMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class FoodValues {
     public Map<ItemStack, Integer> storedFoods = new HashMap<>();
 

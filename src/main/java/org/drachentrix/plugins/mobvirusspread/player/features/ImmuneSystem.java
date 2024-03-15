@@ -53,7 +53,6 @@ public class ImmuneSystem {
         return curImmuneSystem;
     }
 
-
     public float getImmuneSystem() {
         return immuneSystem;
     }
