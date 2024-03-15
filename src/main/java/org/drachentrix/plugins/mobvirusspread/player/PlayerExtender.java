@@ -37,7 +37,6 @@ public class PlayerExtender{
 
     @SubscribeEvent
     public void onFoodEaten(LivingEntityUseItemEvent.Finish event) {
-        //PacketHandler.INSTANCE.send(new PacketHandler("Ur momyy"), PacketDistributor.PLAYER.with(Minecraft.getInstance()));
         if (event.getItem().isEdible()){
             ImmuneSystem immuneSystem = ImmuneSystem.getByPlayer(event.getEntity());
             if (immuneSystem != null) {
