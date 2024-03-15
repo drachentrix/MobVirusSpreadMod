@@ -20,14 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
-
 // Server Side class
 public class ImmuneSystem {
+
     private static final Map<LivingEntity, ImmuneSystem> PLAYER_IMMUNE_SYSTEM = new HashMap<>();
     private final LivingEntity entity;
     public float immuneSystem = 100f;
@@ -58,6 +53,7 @@ public class ImmuneSystem {
         return curImmuneSystem;
     }
 
+
     public float getImmuneSystem() {
         return immuneSystem;
     }
@@ -80,8 +76,10 @@ public class ImmuneSystem {
         }
         Player player = (Player) entity;
         immuneSystem += foodValues.storedFoods.get(itemStack);
+
         foodValues.storedFoods.replace(itemStack, (foodValues.storedFoods.get(itemStack) - player.getFoodData().getFoodLevel() -
                 new Random().nextInt(1, 10) + new Random().nextInt(1, 5)) * (resistanz / 100));
+
 
         if (immuneSystem > 100) {
             immuneSystem = 100;
