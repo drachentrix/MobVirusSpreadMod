@@ -8,15 +8,10 @@ import org.drachentrix.plugins.mobvirusspread.player.FoodValues;
 
 import java.util.Random;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class ImmuneSystem {
     public float immuneSystem = 100;
     public int resistance = 1; // prozent wie sehr die Person resistent ist z.B. mit armor wird weniger verbraucht
-    public FoodValues foodValues;
+    public FoodValues foodValues = new FoodValues();
 
     public float getImmuneSystem() {
         return immuneSystem;

@@ -9,11 +9,6 @@ import org.drachentrix.plugins.mobvirusspread.player.features.ImmuneSystem;
 
 import java.util.Objects;
 
-/**
- * Create:
- *
- * @author Drachentrix (Florian)
- */
 public class PlayerExtender{
     public static ImmuneSystem immuneSystem;
 

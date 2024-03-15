@@ -18,8 +18,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
 import org.drachentrix.plugins.mobvirusspread.effect.EffectDurationChecker;
 import org.drachentrix.plugins.mobvirusspread.effect.VirusEffects;
+import org.drachentrix.plugins.mobvirusspread.event.Events;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCreativeTab;
 import org.drachentrix.plugins.mobvirusspread.item.VirusCure;
+import org.drachentrix.plugins.mobvirusspread.item.custom.VoidScytheItem;
 import org.drachentrix.plugins.mobvirusspread.mob.MobInfectedSpawn;
 import org.drachentrix.plugins.mobvirusspread.mob.MobNearbyInfectedScanner;
 import org.slf4j.Logger;
@@ -45,6 +47,7 @@ public class MobVirusSpread {
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new Events());
         MinecraftForge.EVENT_BUS.register(MobNearbyInfectedScanner.class);
         MinecraftForge.EVENT_BUS.register(MobInfectedSpawn.class);
 
