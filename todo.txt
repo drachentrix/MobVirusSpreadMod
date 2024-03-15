@@ -1,12 +1,11 @@
-    
+requiered tool schreiben für voiddirt (scythe)
+scythe und dann recipe dafür mit voidfrags
 Maschienen fuer die Herstelllung von spritzen:
     Kuehlschrank -> Zum aufbewahren/veraendern
     "Crafting Station" -> Zum herstellen
 
-Png fuer die voidberry states (fast fertig)
 png fuer Void Dirt
 
-Anzeige fuer Immunsystem
 Auf die Art ein Immunsystem, welches durch essen und so weiter beeinflusst werden kann (so circa fertig, warten auf leiste dafuer)
 
 Spritze hilft nicht immer um gesundheit zu verbessern, kommt auf virus an

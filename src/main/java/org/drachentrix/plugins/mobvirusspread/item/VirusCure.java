@@ -1,8 +1,7 @@
 package org.drachentrix.plugins.mobvirusspread.item;
 
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,9 +10,14 @@ import org.drachentrix.plugins.mobvirusspread.MobVirusSpread;
 import org.drachentrix.plugins.mobvirusspread.block.VirusBlocks;
 import org.drachentrix.plugins.mobvirusspread.item.custom.CureItem;
 import org.drachentrix.plugins.mobvirusspread.item.custom.VirusItem;
+import org.drachentrix.plugins.mobvirusspread.item.custom.VoidScytheItem;
 
 public class VirusCure {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MobVirusSpread.MOD_ID);
+
+
+    public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe", () -> new VoidScytheItem(
+            Tiers.DIAMOND,3000, 10f, new Item.Properties())); //todo png dafür
 
     public static final RegistryObject<Item> CURE = ITEMS.register("cure", () -> new CureItem(
             new Item.Properties().stacksTo(1)
