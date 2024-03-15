@@ -47,9 +47,7 @@ public class ImmuneSystemUI {
     // value:  25 -> 15 * 16 -> 240
     // value:   0 -> 20 * 16 -> 320
     private static int getOffsetXForImmuneSystem(float value) {
-        //return Math.round(value) / 5 * 16;
-        System.out.println(value);
-        return ((100 - Math.round(value)) / 5) * 16;
+        return ((100 - Math.round(value)) / 5) * 16; // / 5 -> 100 / 20; 16 -> 1 bild ist 16 groß
     }
 
     public static void renderOverlay(GuiGraphics guiGraphics, int x, int y, int displayWidth, int displayHeight, int imageWidth, int imageHeight, int offsetX, int offsetY, int scale, ResourceLocation resourceLocation) {
